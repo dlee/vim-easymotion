@@ -468,11 +468,15 @@
 				call s:VarReset('&virtualedit', '')
 			" }}}
 			" Find motion targets {{{
+			    "before search,move cursor to top of the screen
+				let topVisibleLine = line('w0')
+				call cursor(topVisibleLine,0)
+
 				let search_direction = (a:direction == 1 ? 'b' : '')
 				let search_stopline = line(a:direction == 1 ? 'w0' : 'w$')
 
 				while 1
-					let pos = searchpos(a:regexp, search_direction, search_stopline)
+					let pos = searchpos(a:regexp,search_direction, search_stopline)
 
 					" Reached end of search range
 					if pos == [0, 0]

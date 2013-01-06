@@ -1,3 +1,10 @@
+# Fork Introduction
+
+**I changed the default search direction from signal search to double direction search.**
+By default, when you hit <leader><leader>w, easymotion will hit the bottom of current cursor.
+Now, I changed it to hit whole screen search.
+
+<hr>
 # Introduction
 
 EasyMotion provides a much simpler way to use some motions in vim. It
