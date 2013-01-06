@@ -1,9 +1,13 @@
-# <p style="color:red;">Fork Introduction</p>
+# Fork Introduction
 
 **I changed the default search direction from signal search to double direction search.**
 By default, when you hit `<leader><leader>w`, easymotion will hit the area below current cursor position.
 Now, I changed it to hit whole screen search.
 
+<hr>
+<hr>
+<hr>
+<hr>
 <hr>
 # Introduction
 
