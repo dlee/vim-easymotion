@@ -3,7 +3,7 @@
 " Author: Kim Silkebækken <kim.silkebaekken+vim@gmail.com>
 " Source repository: https://github.com/Lokaltog/vim-easymotion
 
-" Motion functions {{{
+" Motion functions 
 	function! EasyMotion#EasyMotion#F(visualmode, direction) " {{{
 		let char = s:GetSearchChar(a:visualmode)
 
@@ -32,8 +32,8 @@
 	endfunction " }}}
 	function! EasyMotion#EasyMotion#WB(visualmode, direction) " {{{
 	    " from camelcasemotion.vim: beginning of ...
-	    " word | empty line | non-keyword after whitespaces | non-whitespace after word | number | ACRONYM followed by CamelCase or number | CamelCase | underscore followed by ACRONYM, Camel, lowercase or number
-		call s:EasyMotion('\<\D\|^$\|\%(^\|\s\)\+\zs\k\@!\S\|\>\S\|\d\+\|\u\+\ze\%(\u\l\|\d\)\|\u\l\+\|_\zs\%(\u\+\|\u\l\+\|\l\+\|\d\+\)', a:direction, a:visualmode ? visualmode() : '', '')
+	    " word | empty line | number | ACRONYM followed by CamelCase or number | CamelCase | underscore followed by ACRONYM, Camel, lowercase or number
+		call s:EasyMotion('\<\D\|^$\|\d\+\|\u\+\ze\%(\u\l\|\d\)\|\u\l\+\|_\zs\%(\u\+\|\u\l\+\|\l\+\|\d\+\)', a:direction, a:visualmode ? visualmode() : '', '')
 	endfunction " }}}
 	function! EasyMotion#EasyMotion#WBW(visualmode, direction) " {{{
 		call s:EasyMotion('\(\(^\|\s\)\@<=\S\|^$\)', a:direction, a:visualmode ? visualmode() : '', '')
@@ -50,7 +50,7 @@
 	function! EasyMotion#EasyMotion#Search(visualmode, direction) " {{{
 		call s:EasyMotion(@/, a:direction, a:visualmode ? visualmode() : '', '')
 	endfunction " }}}
-" }}}
+" 
 " Helper functions {{{
 	function! s:Message(message) " {{{
 		echo 'EasyMotion: ' . a:message
